@@ -2,8 +2,8 @@ let inputTitulo = document.querySelector('#titulo');
 let inputAutor = document.querySelector('#autor');
 let inputAno = document.querySelector('#ano');
 let btnAddLivro = document.querySelector('#btnAddLivro');
-let conteudoTabela = document.querySelector("#conteudoTabela")
-let mensagem = document.querySelector("#mensagem")
+let conteudoTabela = document.querySelector("#conteudoTabela");
+let mensagem = document.querySelector("#mensagem");
 
 let livros = [];
 getLivros()
