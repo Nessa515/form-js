@@ -62,3 +62,12 @@ form{
 .tabela{
     border: 1px;
 }
+
+.mensagem{
+    margin: 4px;
+    padding: 4px;
+    background-color: rgb(32, 143, 32);
+    color: white;
+    border-radius: 4px;
+    display: none;
+}

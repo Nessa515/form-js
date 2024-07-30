@@ -3,8 +3,21 @@ let inputAutor = document.querySelector('#autor');
 let inputAno = document.querySelector('#ano');
 let btnAddLivro = document.querySelector('#btnAddLivro');
 let conteudoTabela = document.querySelector("#conteudoTabela")
+let mensagem = document.querySelector("#mensagem")
 
 let livros = [];
+getLivros()
+renderizarTabela()
+
+function getLivros(){
+    livros.JSON.parse(localStorage.getItem
+        ("livros")) || []
+}
+
+function setLivros(){
+    localStorage.setItem("livros", JSON.stringify
+        (livros))
+}
 
 function addLivro(titulo, autor, ano){
     let livro = {
@@ -13,7 +26,9 @@ function addLivro(titulo, autor, ano){
         ano: ano
     }
 
-    livros.push(livro);
+    livros.push(livro)
+    setLivros()
+    mostrarMensagem("Livro adicionado")
 }
 
 btnAddLivro.addEventListener('click', function(e) {
@@ -49,4 +64,14 @@ function renderizarTabela(){
             ).join('')}
         </table>
     `
+}
+
+function mostrarMensagem(texto){
+    mensagem.style.display = 'block'
+    mensagem.innerHTML = texto
+
+    setTimeout(function() {
+        mensagem.style.display = 'none'
+        mensagem.innerHTML = ''
+    }, 3000)
 }
